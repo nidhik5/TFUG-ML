@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Coffee Facts</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f4e4d7, #8b5e3b);
+            color: #3e2723;
+        }
+
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #6d4c41;
+        }
+
+        button {
+            background-color: #6d4c41;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #8b5e3b;
+        }
+
+        .fact {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #3e2723;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Coffee Facts</h1>
+        <button id="generateBtn">Generate Fact</button>
+        <p class="fact" id="coffeeFact">Click the button to reveal a coffee fact!</p>
+    </div>
+
+    <script>
+        const coffeeFacts = [
+            "Coffee is the second most traded commodity on Earth.",
+            "The word 'coffee' comes from the Arabic word 'qahwa'.",
+            "Coffee was discovered by an Ethiopian goat herder named Kaldi.",
+            "The first webcam was invented to monitor a coffee pot.",
+            "Finland is the world's largest coffee consumer per capita.",
+            "Coffee beans are actually seeds of the coffee cherry.",
+            "Espresso means 'pressed out' in Italian.",
+            "Decaf coffee is not 100% caffeine-free.",
+            "Instant coffee was invented in 1901 by a Japanese-American chemist.",
+            "Coffee grounds can be used as a natural fertilizer."
+        ];
+
+        document.getElementById('generateBtn').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * coffeeFacts.length);
+            const randomFact = coffeeFacts[randomIndex];
+            document.getElementById('coffeeFact').innerText = randomFact;
+        });
+    </script>
+</body>
+</html>
